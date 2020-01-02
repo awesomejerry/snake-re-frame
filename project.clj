@@ -6,6 +6,7 @@
                                org.clojure/google-closure-library-third-party]]
                  [thheller/shadow-cljs "2.8.83"]
                  [reagent "0.8.1"]
+                 [re-pressed "0.3.1"]
                  [re-frame "0.10.9"]
                  [garden "1.3.9"]
                  [ns-tracker "0.4.0"]]
@@ -24,7 +25,6 @@
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"
                                     "test/js"
                                     "resources/public/css"]
-
 
   :garden {:builds [{:id           "screen"
                      :source-paths ["src/clj"]
@@ -58,5 +58,4 @@
                    [day8.re-frame/tracing "0.5.3"]
                    [re-frisk "0.5.4.1"]]}
 
-   :prod { :dependencies [[day8.re-frame/tracing-stubs "0.5.3"]]}
-   })
+   :prod {:dependencies [[day8.re-frame/tracing-stubs "0.5.3"]]}})

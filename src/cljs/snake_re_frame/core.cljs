@@ -5,8 +5,7 @@
    [snake-re-frame.events :as events]
    [snake-re-frame.views :as views]
    [snake-re-frame.config :as config]
-   ))
-
+   [snake-re-frame.keyboard :as keyboard]))
 
 (defn dev-setup []
   (when config/debug?
@@ -20,4 +19,5 @@
 (defn init []
   (re-frame/dispatch-sync [::events/initialize-db])
   (dev-setup)
-  (mount-root))
+  (mount-root)
+  (keyboard/setup))
