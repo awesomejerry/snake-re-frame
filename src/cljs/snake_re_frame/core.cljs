@@ -2,6 +2,7 @@
   (:require
    [reagent.core :as reagent]
    [re-frame.core :as re-frame]
+   [cljss.core :as css]
    [snake-re-frame.events :as events]
    [snake-re-frame.views :as views]
    [snake-re-frame.config :as config]
@@ -13,6 +14,7 @@
 
 (defn ^:dev/after-load mount-root []
   (re-frame/clear-subscription-cache!)
+  (css/remove-styles!)
   (reagent/render [views/main-panel]
                   (.getElementById js/document "app")))
 

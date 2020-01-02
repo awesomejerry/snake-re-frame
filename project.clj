@@ -9,6 +9,7 @@
                  [re-pressed "0.3.1"]
                  [re-frame "0.10.9"]
                  [garden "1.3.9"]
+                 [clj-commons/cljss "1.6.4"]
                  [ns-tracker "0.4.0"]]
 
   :plugins [[lein-garden "0.3.0"]
