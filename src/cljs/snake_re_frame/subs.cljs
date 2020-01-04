@@ -3,11 +3,21 @@
    [re-frame.core :as re-frame]))
 
 (re-frame/reg-sub
- ::name
+ ::starts
  (fn [db]
-   (:name db)))
+   (:starts db)))
 
 (re-frame/reg-sub
- ::direction
+ ::max-size
  (fn [db]
-   (:direction db)))
+   (:max-size db)))
+
+(re-frame/reg-sub
+ ::apple
+ (fn [db]
+   (:apple db)))
+
+(re-frame/reg-sub
+ ::snake
+ (fn [db]
+   (:snake db)))

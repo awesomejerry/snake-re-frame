@@ -6,11 +6,11 @@
 (defn setup
   []
   (re-frame/dispatch-sync [::rp/add-keyboard-event-listener "keyup"])
-  (re-frame/dispatch [::rp/set-keyup-rules {:event-keys [[[:move "left"]
+  (re-frame/dispatch [::rp/set-keyup-rules {:event-keys [[[:turn-direction "left"]
                                                           [{:keyCode 37}]]
-                                                         [[:move "up"]
+                                                         [[:turn-direction "up"]
                                                           [{:keyCode 38}]]
-                                                         [[:move "right"]
+                                                         [[:turn-direction "right"]
                                                           [{:keyCode 39}]]
-                                                         [[:move "down"]
+                                                         [[:turn-direction "down"]
                                                           [{:keyCode 40}]]]}]))
