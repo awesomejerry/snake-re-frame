@@ -7,6 +7,7 @@
                  [thheller/shadow-cljs "2.8.83"]
                  [reagent "0.8.1"]
                  [re-pressed "0.3.1"]
+                 [district0x/re-frame-interval-fx "1.0.2"]
                  [re-frame "0.10.9"]
                  [garden "1.3.9"]
                  [clj-commons/cljss "1.6.4"]
