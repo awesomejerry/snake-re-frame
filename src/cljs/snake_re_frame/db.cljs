@@ -6,6 +6,7 @@
 (def default-db
   {:starts false
    :max-size 10
+   :speed 500
    :snake default-snake
    :apple nil
    :direction "right"})

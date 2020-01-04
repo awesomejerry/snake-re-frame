@@ -13,6 +13,11 @@
    (:max-size db)))
 
 (re-frame/reg-sub
+ ::speed
+ (fn [db]
+   (:speed db)))
+
+(re-frame/reg-sub
  ::apple
  (fn [db]
    (:apple db)))

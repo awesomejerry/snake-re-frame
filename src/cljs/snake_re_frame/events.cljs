@@ -73,7 +73,7 @@
  (fn-traced [{:keys [db]} _]
             {:dispatch-interval {:dispatch [:next-frame]
                                  :id :frame-interval
-                                 :ms 500}
+                                 :ms (:speed db)}
              :db (assoc db :starts true)}))
 
 (re-frame/reg-event-fx
@@ -82,6 +82,12 @@
             {:clear-interval {:id :frame-interval}
              :db (assoc db :starts false)}))
 
+(re-frame/reg-event-db
+ :reset
+ (fn-traced [db _]
+            (do (re-frame/dispatch [:stop])
+                (merge db db/default-db))))
+
 (re-frame/reg-event-fx
  :next-frame
  (fn-traced [{:keys [db]} _]
@@ -89,3 +95,13 @@
               (if (or (hit-wall? new-db) (hit-body? new-db))
                 (do (re-frame/dispatch [:stop]) {:db db})
                 {:db new-db}))))
+
+(re-frame/reg-event-db
+ :set-max-size
+ (fn-traced [db [_ max-size]]
+            (assoc db :max-size max-size)))
+
+(re-frame/reg-event-db
+ :set-speed
+ (fn-traced [db [_ speed]]
+            (assoc db :speed speed)))
